@@ -3,7 +3,7 @@ import axios from 'axios';
 const GOOGLE_API_KEY = 'AIzaSyCYvweZhF_EsjwDB9UVv6arZj-IoHfJW-s';
 const GOOGLE_ROOT_URL = 'https://maps.googleapis.com/maps/api/geocode/json?address=';
 const WWO_API_KEY = 'd593dd7bba4d4bb8bcf154640163006';
-const WWO_ROOT_URL = 'http://api.worldweatheronline.com/premium/v1/marine.ashx?key=';
+const WWO_ROOT_URL = 'https://api.worldweatheronline.com/premium/v1/marine.ashx?key=';
 
 // http://api.worldweatheronline.com/premium/v1/marine.ashx?key=d593dd7bba4d4bb8bcf154640163006&format=json&q=45,-2
 
