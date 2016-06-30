@@ -1,9 +1,8 @@
-'use strict';
-const express = require('express');
-const router = express.Router();
-const knex = require('knex')(require('../knexfile')[process.env.DB_ENV]);
+var express = require('express');
+var router = express.Router();
+var knex = require('knex')(require('../knexfile')[process.env.DB_ENV]);
 
-router.get('/', (req,res,next) => {
+router.get('/', function(req,res,next) {
  res.json({message: "test"});
 })
 
