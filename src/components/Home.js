@@ -1,10 +1,13 @@
 import React, {Component} from "react"
 
+import SearchLocation from './SearchLocation';
 
 class Home extends Component {
   render() {
     return (
-      <h1>diveDB...bitches</h1>
+      <div>
+      <SearchLocation/>
+      </div>
     )
   }
 }
