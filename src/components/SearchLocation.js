@@ -28,8 +28,22 @@ class SearchLocation extends Component {
     this.setState({term: ''});
   }
 
-  check(val) {
+  renderLocation(val) {
     console.log('GOT THE STATE IN CHECK', val);
+    if(val.location && val.weather) {
+      return (
+        <div>
+        <h1>Weather and Sea State for: <em>{val.location.results[0].formatted_address}</em></h1>
+        <div><h3>Forecast: <em>{val.weather[0].hourly[4].weatherDesc[0].value}</em></h3></div>
+        <div><h3>Max Temp: <em>{val.weather[0].maxtempF}&deg;F</em></h3></div>
+        <div><h3>Max Temp: <em>{val.weather[0].mintempF}&deg;F</em></h3></div>
+        <div><h3>Water Temp: <em>{val.weather[0].hourly[4].waterTemp_F}&deg;F</em></h3></div>
+        <div><h3>Wave Height: <em>{val.weather[0].hourly[4].swellHeight_ft} ft</em></h3></div>
+        <div><h3>Wind Speed: <em>{val.weather[0].hourly[4].windspeedMiles} mph</em></h3></div>
+        <div><h3>Wind Dir: <em>{val.weather[0].hourly[4].winddir16Point}</em></h3></div>
+        </div>
+      )
+    }
   }
 
   render() {
@@ -46,7 +60,7 @@ class SearchLocation extends Component {
       <input type='submit' className='btn btn-secondary' value='Submit'/>
       </span>
       </form>
-      {this.check(this.props.weather)}
+      {this.renderLocation(this.props.weather)}
       </div>
     )
   }

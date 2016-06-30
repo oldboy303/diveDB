@@ -28956,9 +28956,128 @@
 	      this.setState({ term: '' });
 	    }
 	  }, {
-	    key: 'check',
-	    value: function check(val) {
+	    key: 'renderLocation',
+	    value: function renderLocation(val) {
 	      console.log('GOT THE STATE IN CHECK', val);
+	      if (val.location && val.weather) {
+	        return _react2.default.createElement(
+	          'div',
+	          null,
+	          _react2.default.createElement(
+	            'h1',
+	            null,
+	            'Weather and Sea State for: ',
+	            _react2.default.createElement(
+	              'em',
+	              null,
+	              val.location.results[0].formatted_address
+	            )
+	          ),
+	          _react2.default.createElement(
+	            'div',
+	            null,
+	            _react2.default.createElement(
+	              'h3',
+	              null,
+	              'Forecast: ',
+	              _react2.default.createElement(
+	                'em',
+	                null,
+	                val.weather[0].hourly[4].weatherDesc[0].value
+	              )
+	            )
+	          ),
+	          _react2.default.createElement(
+	            'div',
+	            null,
+	            _react2.default.createElement(
+	              'h3',
+	              null,
+	              'Max Temp: ',
+	              _react2.default.createElement(
+	                'em',
+	                null,
+	                val.weather[0].maxtempF,
+	                '°F'
+	              )
+	            )
+	          ),
+	          _react2.default.createElement(
+	            'div',
+	            null,
+	            _react2.default.createElement(
+	              'h3',
+	              null,
+	              'Max Temp: ',
+	              _react2.default.createElement(
+	                'em',
+	                null,
+	                val.weather[0].mintempF,
+	                '°F'
+	              )
+	            )
+	          ),
+	          _react2.default.createElement(
+	            'div',
+	            null,
+	            _react2.default.createElement(
+	              'h3',
+	              null,
+	              'Water Temp: ',
+	              _react2.default.createElement(
+	                'em',
+	                null,
+	                val.weather[0].hourly[4].waterTemp_F,
+	                '°F'
+	              )
+	            )
+	          ),
+	          _react2.default.createElement(
+	            'div',
+	            null,
+	            _react2.default.createElement(
+	              'h3',
+	              null,
+	              'Wave Height: ',
+	              _react2.default.createElement(
+	                'em',
+	                null,
+	                val.weather[0].hourly[4].swellHeight_ft,
+	                ' ft'
+	              )
+	            )
+	          ),
+	          _react2.default.createElement(
+	            'div',
+	            null,
+	            _react2.default.createElement(
+	              'h3',
+	              null,
+	              'Wind Speed: ',
+	              _react2.default.createElement(
+	                'em',
+	                null,
+	                val.weather[0].hourly[4].windspeedMiles,
+	                ' mph'
+	              )
+	            )
+	          ),
+	          _react2.default.createElement(
+	            'div',
+	            null,
+	            _react2.default.createElement(
+	              'h3',
+	              null,
+	              'Wind Dir: ',
+	              _react2.default.createElement(
+	                'em',
+	                null,
+	                val.weather[0].hourly[4].winddir16Point
+	              )
+	            )
+	          )
+	        );
+	      }
 	    }
 	  }, {
 	    key: 'render',
@@ -28981,7 +29100,7 @@
 	            _react2.default.createElement('input', { type: 'submit', className: 'btn btn-secondary', value: 'Submit' })
 	          )
 	        ),
-	        this.check(this.props.weather)
+	        this.renderLocation(this.props.weather)
 	      );
 	    }
 	  }]);
